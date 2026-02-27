@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>छायाचित्रे</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Nirmala UI, sans-serif;
+    background:#f4f6fb;
+}
+
+.section {
+    text-align:center;
+    padding:40px 0 20px;
+}
+
+.section h3 {
+    font-size:28px;   /* increased size */
+    font-weight:800;
+    color:#003366;
+    margin-bottom:10px;
+    border-bottom:4px solid #ffcc00;
+    display:inline-block;
+    padding-bottom:6px;
+}
+
+h1{
+    text-align:center;
+    padding:40px 0 20px;
+    color:#1a237e;
+}
+
+.gallery-container{
+    max-width:1200px;
+    margin:0 auto;
+    padding:20px;
+    column-count:2;
+    column-gap:25px;
+}
+
+.gallery-container img{
+    width:100%;
+    height:auto;
+    margin-bottom:25px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    transition:0.3s ease;
+    break-inside:avoid;
+}
+
+.gallery-container img:hover{
+    transform:scale(1.05);
+}
+
+.back-btn{
+    display:block;
+    width:200px;
+    margin:40px auto;
+    text-align:center;
+    padding:12px;
+    background:#1a237e;
+    color:#fff;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+}
+
+.top-btn{
+    margin:20px auto 20px;
+}
+
+.page-section{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:20px 0 0px 0;
+}
+
+
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width:768px){
+
+    /* Title */
+	
+    .page-section{
+        margin:30px 0 10px 0;
+    }
+
+    	
+	
+
+    /* Buttons */
+    .back-btn{
+        width:180px;
+        font-size:14px;
+        padding:10px;
+        margin:20px auto;
+    }
+
+    .top-btn{
+        margin-top:10px;
+        margin-bottom:15px;
+    }
+
+    /* Gallery layout → 1 column */
+    .gallery-container{
+        column-count:1;
+        padding:15px;
+        column-gap:15px;
+    }
+
+    .gallery-container img{
+        margin-bottom:20px;
+        border-radius:12px;
+    }
+
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="section">
+    <h3>छायाचित्रे (Gallery)</h3>
+</div>
+
+
+<a href="index.html" class="back-btn top-btn">मुख्य पानावर जा</a>
+
+<div class="gallery-container" id="gallery"></div>
+
+<a href="index.html" class="back-btn">मुख्य पानावर जा</a>
+
+<script>
+const gallery = document.getElementById("gallery");
+
+// List ALL image filenames from your images folder
+const images = [
+  "1.jpeg",
+  "2.jpeg",
+  "3.jpeg",
+  "4.jpeg",
+  "5.jpeg",
+  "6.jpeg",
+  "8.jpeg",
+  "9.jpeg",
+  "10.jpeg",
+  "11.jpeg",
+  "12.jpeg",
+  "13.jpeg",
+  "14.jpeg",
+  "15.jpeg",
+  "16.jpeg",
+  "17.jpg",
+  "18.jpeg",
+  "19.jpeg",
+  "20.jpeg",
+  "21.jpeg",
+  "22.jpeg",
+  "23.jpg",
+  "24.jpg",
+  "25.jpg",
+  "26.jpeg",
+  "27.jpeg",
+  "28.jpeg",
+  "29.jpeg",
+  "30.jpeg",
+  "31.jpeg",
+  "32.jpg",
+    // Add more here if present
+];
+
+images.forEach(img => {
+    const imageElement = document.createElement("img");
+    imageElement.src = "images/" + img;
+    gallery.appendChild(imageElement);
+});
+
+
+</script>
+
+<script>
+history.scrollRestoration = "manual";
+window.onload = function(){
+    window.scrollTo(0,0);
+};
+</script>
+
+</body>
+</html>
