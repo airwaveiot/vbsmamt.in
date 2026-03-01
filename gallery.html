@@ -6,10 +6,12 @@
 <title>छायाचित्रे</title>
 
 <style>
+
 body{
     margin:0;
     font-family:Nirmala UI, sans-serif;
     background:#f4f6fb;
+    overflow-x:hidden;   /* prevents accidental scroll */
 }
 
 .section {
@@ -122,6 +124,64 @@ h1{
 
 }
 
+/* FOOTER */
+
+/* ================= FOOTER PREMIUM ================= */
+
+.footer {
+  width: 100%;
+  background: linear-gradient(135deg,#F09B59,#003366);
+  color:#fff;
+  padding:20px 20px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.footer::before{
+    content:"";
+    position:absolute;
+    width:200%;
+    height:200%;
+    background:radial-gradient(circle,rgba(255,255,255,0.1) 10%,transparent 60%);
+    top:-50%;
+    left:-50%;
+    animation:shine 6s linear infinite;
+}
+
+@keyframes shine{
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(360deg);}
+}
+
+.footer-content{
+    position:relative;
+    z-index:2;
+}
+
+.developer{
+    font-size:18px;
+    font-weight:600;
+    margin-bottom:8px;
+    letter-spacing:0.5px;
+}
+
+.brand{
+    color:#ffcc00;
+    font-weight:800;
+    font-size:20px;
+}
+
+.copyright{
+    font-size:16px;
+    opacity:0.9;
+}
+
+.domain{
+    color:#00e5ff;
+    font-weight:700;
+}
+
 </style>
 
 </head>
@@ -137,6 +197,21 @@ h1{
 <div class="gallery-container" id="gallery"></div>
 
 <a href="index.html" class="back-btn">मुख्य पानावर जा</a>
+
+<footer class="footer">
+  <div class="footer-content">
+    <p class="developer">
+      Designed & Developed by 
+      <span class="brand">AirwaveIOT, Amravati (9423418365)</span>
+    </p>
+
+    <p class="copyright">
+      Copyright © 2026 
+      <span class="domain">www.vbsmamt.in</span> 
+      | All Rights Reserved
+    </p>
+  </div>
+</footer>
 
 <script>
 const gallery = document.getElementById("gallery");
